@@ -34,7 +34,7 @@ namespace co.JuliusPruebaTecnica.InfraestructureData.Model
                 //    .AddJsonFile("appsettings.json")
                 //    .Build();
                 //Directory.GetCurrentDirectory() configuration.GetConnectionString("JuliusConn")
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=JuliusDB;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=JuliusDB;Trusted_Connection=True;");
             }
         }
 

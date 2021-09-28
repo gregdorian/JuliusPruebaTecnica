@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using co.JuliusPruebaTecnica.Aplicacion.Interfaces;
+using co.JuliusPruebaTecnica.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,36 +15,76 @@ namespace co.JuliuPruebaTecnica.WebApi.Controllers
     [ApiController]
     public class PostNewsController : ControllerBase
     {
+
+        private readonly IPostsAppService postsAppService;
+
+        private readonly ILogger<PostNewsController> _logger;
+        //private readonly UserManager<RpUsers> userManager;
+
+        public PostNewsController(IPostsAppService postsAppService,
+                                  ILogger<PostNewsController> logger )
+        {
+            this.postsAppService = postsAppService;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+        
+
         // GET: api/<PostNewsController>
         [HttpGet]
+        [Authorize]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var lstPost = postsAppService.GetAll();
+
+            _logger.LogInformation($"Status Listed: ");
+
+            return (IEnumerable<string>)lstPost;
         }
 
         // GET api/<PostNewsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        [Authorize]
+        //[Authorize(Roles = "Administrator, RegularUser")]
+        public ActionResult<PostNoticias> Get(int id)
         {
-            return "value";
+            var post = postsAppService.GetById(id);
+            if (post == null)
+            {
+                _logger.LogError("No Data found");
+                return NotFound();
+            }
+            return Ok(post);
         }
 
         // POST api/<PostNewsController>
         [HttpPost]
+        [Authorize]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT api/<PostNewsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] PostNoticias value)
         {
+            if (value != null)
+            {
+                postsAppService.Add(value);
+                _logger.LogInformation("Data SAVED!!!");
+            }
+            else
+            {
+                _logger.LogError("No Data found");
+            }
         }
 
         // DELETE api/<PostNewsController>/5
         [HttpDelete("{id}")]
+        [Authorize]
         public void Delete(int id)
         {
+            postsAppService.Delete(id);
+            _logger.LogInformation("Data Deleted");
         }
     }
 }
