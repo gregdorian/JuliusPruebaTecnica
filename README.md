@@ -8,6 +8,7 @@ Se Crea un front-end con Javascript utilizando Jquery y boostrap. se crea un cli
 y encriptación HmacSha256
 
 Pasos para Clonar el proyecto:
+
 0. Tener instalado .Net 5.0 y visual studio 2019
 1. Eliminar (si existen carpetas de migración) y realizar el *Add-migration*
   si compila bien la primera migración realizar *update-database*
