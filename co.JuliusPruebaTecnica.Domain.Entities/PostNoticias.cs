@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace co.JuliusPruebaTecnica.Domain.Entities
 {
+    [Keyless]
     public class PostNoticias
     {
-        [Key]
-        public int Id { get; set; }
-        public int ImagenPost { get; set; }
+        public byte[] ImagenPost { get; set; }
         public string Titulo { get; set; }
         public string Contenido { get; set; }
         public DateTime FechaCreacion { get; set; }

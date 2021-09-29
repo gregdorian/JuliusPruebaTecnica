@@ -55,25 +55,24 @@ namespace co.JuliuPruebaTecnica.WebApi
                 });
 
 
-            ////Servicios de la capa de aplicación con servicios
-            //services.AddScoped(typeof(IBaseAppService<>), typeof(BaseAppService<>));
-            //services.AddScoped<IPostsAppService, PostsAppService>();
+            //Servicios de la capa de aplicación con servicios
+            services.AddScoped(typeof(IBaseAppService<>), typeof(BaseAppService<>));
+            services.AddScoped<IPostsAppService, PostsAppService>();
 
 
-            //////el dominio a los de infraestructura
-            //services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
-            //services.AddScoped<IPostsService, PostsService>();
+            ////el dominio a los de infraestructura
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped<IPostsService, PostsService>();
 
-            //////infraestructura o persistencia
-            //services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            //services.AddScoped<IPostsRepository, PostRepository>();
+            ////infraestructura o persistencia
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IPostsRepository, PostRepository>();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "co.JuliuPruebaTecnica.WebApi", Version = "v1" });
             });
 
-            //options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=realpageDB;Trusted_Connection=True;");
             services.AddDbContext<JuliusContext>(options =>   options.UseSqlServer(
             Configuration.GetConnectionString("JuliusConn")));
 

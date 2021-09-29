@@ -31,14 +31,13 @@ namespace co.JuliuPruebaTecnica.WebApi.Controllers
 
         // GET: api/<PostNewsController>
         [HttpGet]
-        [Authorize]
-        public IEnumerable<string> Get()
+         public IEnumerable<PostNoticias> Get()
         {
             var lstPost = postsAppService.GetAll();
 
             _logger.LogInformation($"Status Listed: ");
 
-            return (IEnumerable<string>)lstPost;
+            return lstPost;
         }
 
         // GET api/<PostNewsController>/5
@@ -59,7 +58,7 @@ namespace co.JuliuPruebaTecnica.WebApi.Controllers
         // POST api/<PostNewsController>
         [HttpPost]
         [Authorize]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] PostNoticias value)
         {
         }
 

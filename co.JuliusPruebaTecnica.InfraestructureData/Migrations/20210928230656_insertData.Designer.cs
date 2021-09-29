@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using co.JuliusPruebaTecnica.InfraestructureData.Model;
 
 namespace co.JuliusPruebaTecnica.InfraestructureData.Migrations
 {
     [DbContext(typeof(JuliusContext))]
-    partial class JuliusContextModelSnapshot : ModelSnapshot
+    [Migration("20210928230656_insertData")]
+    partial class insertData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,29 +36,6 @@ namespace co.JuliusPruebaTecnica.InfraestructureData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("PostNoticias");
-                });
-
-            modelBuilder.Entity("co.JuliusPruebaTecnica.Domain.Entities.UsuarioInfo", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Apellidos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rol")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UsuarioInfo");
                 });
 
             modelBuilder.Entity("co.JuliusPruebaTecnica.Domain.Entities.UsuarioLogin", b =>

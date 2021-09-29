@@ -10,8 +10,8 @@ using co.JuliusPruebaTecnica.InfraestructureData.Model;
 namespace co.JuliusPruebaTecnica.InfraestructureData.Migrations
 {
     [DbContext(typeof(JuliusContext))]
-    [Migration("20210928154503_addingTables")]
-    partial class addingTables
+    [Migration("20210928231112_addUsuarioInfo")]
+    partial class addUsuarioInfo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,26 +23,42 @@ namespace co.JuliusPruebaTecnica.InfraestructureData.Migrations
 
             modelBuilder.Entity("co.JuliusPruebaTecnica.Domain.Entities.PostNoticias", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("Contenido")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ImagenPost")
-                        .HasColumnType("int");
+                    b.Property<byte[]>("ImagenPost")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.ToTable("PostNoticias");
+                });
+
+            modelBuilder.Entity("co.JuliusPruebaTecnica.Domain.Entities.UsuarioInfo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rol")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("PostNoticias");
+                    b.ToTable("UsuarioInfo");
                 });
 
             modelBuilder.Entity("co.JuliusPruebaTecnica.Domain.Entities.UsuarioLogin", b =>

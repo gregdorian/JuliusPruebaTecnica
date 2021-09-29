@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿using co.JuliusPruebaTecnica.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace co.JuliusPruebaTecnica.InfraestructureData.Model
 {
@@ -9,10 +10,10 @@ namespace co.JuliusPruebaTecnica.InfraestructureData.Model
         {
 
             //model.Entity<PostNoticias>().HasData(
-            //       new PostNoticias { ProductName = "Producto 1", UnitsInStock = 2, UnitPrice = (decimal?)3.5 },
-            //       new PostNoticias { ProductName = "Producto 2", UnitsInStock = 1, UnitPrice = (decimal?)5.5 },
-            //       new PostNoticias { ProductName = "Producto 3", UnitsInStock = 50, UnitPrice = (decimal?)6.5 },
-            //       new PostNoticias { ProductName = "Producto 4", UnitsInStock = 1, UnitPrice = (decimal?)32.5 });
+            //       new PostNoticias { ImagenPost =null,Titulo = "Titulo99", Contenido = "Contenido 14", FechaCreacion = DateTime.Now.AddDays(3) },
+                     //new PostNoticias { ImagenPost = null, Titulo = "Titulo10", Contenido = "Contenido 24", FechaCreacion = DateTime.Now.AddDays(23) },
+                     //new PostNoticias { ImagenPost = null, Titulo = "Titulo53", Contenido = "Contenido 33", FechaCreacion = DateTime.Now.AddDays(13) },
+                     //new PostNoticias { ImagenPost = null, Titulo = "Titulo94", Contenido = "Contenido 43", FechaCreacion = DateTime.Now.AddDays(43) });
 
         }
     }

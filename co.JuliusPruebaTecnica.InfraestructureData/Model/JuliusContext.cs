@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,31 +19,35 @@ namespace co.JuliusPruebaTecnica.InfraestructureData.Model
         }
 
         public JuliusContext(DbContextOptions<JuliusContext> options)
-    : base(options)
+                  : base(options)
         {
         }
         public virtual DbSet<PostNoticias> PostNoticias { get; set; }
         public virtual DbSet<UsuarioLogin> UsuarioLogin { get; set; }
+        public virtual DbSet<UsuarioInfo> UsuarioInfo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //**** Solo para Realizarel Primer Initial-Migration  ****
             if (!optionsBuilder.IsConfigured)
             {
-                //IConfigurationRoot configuration = new ConfigurationBuilder()
-                //    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                //    .AddJsonFile("appsettings.json")
-                //    .Build();
-                //Directory.GetCurrentDirectory() configuration.GetConnectionString("JuliusConn")
-                //optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=JuliusDB;Trusted_Connection=True;");
+                
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=JuliusDB;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Seed();
 
+            builder.Entity<PostNoticias>(builder => {
+                builder.HasNoKey();
+                builder.ToTable("PostNoticias");
+            });
+
+            builder.Seed();
+            
+                   
         }
     }
 }
