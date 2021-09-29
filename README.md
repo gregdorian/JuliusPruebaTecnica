@@ -10,12 +10,12 @@ y encriptación HmacSha256
 Pasos para Clonar el proyecto:
 
 0. Tener instalado .Net 5.0 y visual studio 2019
-1. Eliminar (si existen carpetas de migración) y realizar el *Add-migration*
-  si compila bien la primera migración realizar *update-database*
+1. Eliminar (si existen carpetas de migración) y realizar el **Add-migration**
+  si compila bien la primera migración realizar **update-database**
 2. revisar que agrego las tablas a la base de datos donde realiza la migración, esta definida en la instancia que viene por defecto VisualStudio
-   (localdb)\\MSSQLLocalDB
-3. f5 para ejecutar por el proyecto de Inicio Web Wpi *co.JuliuPruebaTecnica.WebApi*
-4. colocar la url del endpoint *http://localhost:63067/api/PostNews* debe arrojar listado de post.
+   **(localdb)\\MSSQLLocalDB**
+3. f5 para ejecutar por el proyecto de Inicio Web Wpi **co.JuliuPruebaTecnica.WebApi**
+4. colocar la url del endpoint *http://localhost:63067/api/PostNews* en **postman** (el proyecto tambien esta Configurado *swagger*); debe arrojar listado de post.
 
 Si no arroja datos ejecutar los siguientes insert en la BD:
 
@@ -29,5 +29,5 @@ Si no arroja datos ejecutar los siguientes insert en la BD:
         GO
      INSERT INTO [dbo].[PostNoticias] ([ImagenPost], [Titulo], [Contenido], [FechaCreacion]) VALUES (null,'Titulo9','Contenido 4','2021-4-5')
         GO
-#PENDIENTE
+#**PENDIENTE**
 Consumo del api desde el FrontEnd
