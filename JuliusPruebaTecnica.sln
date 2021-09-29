@@ -3,15 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.JuliusPruebaTecnica.InfraestructureData", "co.JuliusPruebaTecnica.InfraestructureData\co.JuliusPruebaTecnica.InfraestructureData.csproj", "{1C66E4A0-1A09-4DDC-AA0D-EB8A80B5A055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "co.JuliusPruebaTecnica.InfraestructureData", "co.JuliusPruebaTecnica.InfraestructureData\co.JuliusPruebaTecnica.InfraestructureData.csproj", "{1C66E4A0-1A09-4DDC-AA0D-EB8A80B5A055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.JuliusPruebaTecnica.Domain.Entities", "co.JuliusPruebaTecnica.Domain.Entities\co.JuliusPruebaTecnica.Domain.Entities.csproj", "{49DD497B-93C5-4CF6-9023-C9C949643B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "co.JuliusPruebaTecnica.Domain.Entities", "co.JuliusPruebaTecnica.Domain.Entities\co.JuliusPruebaTecnica.Domain.Entities.csproj", "{49DD497B-93C5-4CF6-9023-C9C949643B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.JuliuPruebaTecnica.WebApi", "co.JuliuPruebaTecnica.WebApi\co.JuliuPruebaTecnica.WebApi.csproj", "{024E0F11-4424-42C1-9313-B167049345C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "co.JuliuPruebaTecnica.WebApi", "co.JuliuPruebaTecnica.WebApi\co.JuliuPruebaTecnica.WebApi.csproj", "{024E0F11-4424-42C1-9313-B167049345C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.JuliusPruebaTecnica.Domain.Core", "co.JuliusPruebaTecnica.Domain.Core\co.JuliusPruebaTecnica.Domain.Core.csproj", "{695C0F85-A364-435D-ACB3-F993844BFFD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "co.JuliusPruebaTecnica.Domain.Core", "co.JuliusPruebaTecnica.Domain.Core\co.JuliusPruebaTecnica.Domain.Core.csproj", "{695C0F85-A364-435D-ACB3-F993844BFFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.JuliusPruebaTecnica.Aplicacion", "co.JuliusPruebaTecnica.Aplicacion\co.JuliusPruebaTecnica.Aplicacion.csproj", "{19DDFCB2-2315-476F-B73E-2989AF00EAA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "co.JuliusPruebaTecnica.Aplicacion", "co.JuliusPruebaTecnica.Aplicacion\co.JuliusPruebaTecnica.Aplicacion.csproj", "{19DDFCB2-2315-476F-B73E-2989AF00EAA5}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "co.JuliusPruebaTecnica.WebUI", "co.JuliusPruebaTecnica.WebUI\", "{5A1CE743-7C06-4150-BE70-5D618D37C142}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1041"
+		Debug.AspNetCompiler.PhysicalPath = "co.JuliusPruebaTecnica.WebUI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1041\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1041"
+		Release.AspNetCompiler.PhysicalPath = "co.JuliusPruebaTecnica.WebUI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1041\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1041"
+		SlnRelativePath = "co.JuliusPruebaTecnica.WebUI\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +60,10 @@ Global
 		{19DDFCB2-2315-476F-B73E-2989AF00EAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19DDFCB2-2315-476F-B73E-2989AF00EAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19DDFCB2-2315-476F-B73E-2989AF00EAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A1CE743-7C06-4150-BE70-5D618D37C142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1CE743-7C06-4150-BE70-5D618D37C142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A1CE743-7C06-4150-BE70-5D618D37C142}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1CE743-7C06-4150-BE70-5D618D37C142}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
